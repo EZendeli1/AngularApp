@@ -1,0 +1,33 @@
+<div>
+    <h3>Unesi novog studenta</h3>
+    <div>
+        <label>
+            Ime:
+             <div>
+                <input #studentFirstName/>
+             </div>
+        </label>
+    </div>
+    <div>
+        <label>
+            Prezime:
+            <div>
+                <input #studentLastName />
+            </div>
+        </label>
+    </div>
+</div>
+<div>
+    <label>Broj ECTS bodova:
+        <div>
+            <input type="number" #studentNumberOfECTS/>
+        </div>
+    </label>
+
+    <button (click)="add(studentFirstName.value,studentLastName.value,studentJMBAG.value,+studentNumberOfECTS.value); studentFirstName.value=''; studentLastName.value=''; studentJMBAG.value=''; studentNumberOfECTS.value=''">
+        Unesi Studenta
+
+    </button>
+
+</div>
+

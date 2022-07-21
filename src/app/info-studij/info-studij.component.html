@@ -1,0 +1,11 @@
+
+
+
+<div class="status" *ngIf ="student">
+    
+    <div *ngIf= "student.numberOfECTS <180 || student.numberOfECTS== 180" >Status Studija je preddiplomski </div> 
+        <div *ngIf= "student.numberOfECTS >180 && student.numberOfECTS <300|| student.numberOfECTS== 300 && student.numberOfECTS <300" >Status Studija je diplomski </div> 
+            <div *ngIf= "student.numberOfECTS >300 || student.numberOfECTS== 480" >Status Studija je postdiplomski </div> 
+    
+    
+    </div>

@@ -1,0 +1,60 @@
+<h2> Popis studenata </h2>
+<ol class="list-type1">
+    <li *ngFor ="let student of students"
+        (click)="onSelect(student)"
+        [class.selected]="student===selectedStudent"
+        [class.selected]="student===selectedStudent2">
+        <span class ="badge"> {{student.jmbag}}</span> {{student.numberOfECTS}} ECTS
+    </li>
+</ol>
+
+<app-student-detail [student]= "selectedStudent2"></app-student-detail> 
+<app-info-studij [student]= "selectedStudent"></app-info-studij>
+
+<div>
+    <h3>Unesi novog studenta</h3>
+    <div>
+        <label>
+            Ime:
+             <div>
+                <input #studentFirstName/>
+             </div>
+        </label>
+    </div>
+    <div>
+        <label>
+            Prezime:
+            <div>
+                <input #studentLastName />
+            </div>
+        </label>
+    </div>
+    <div>
+        <label>
+            JMBAG:
+            <div>
+                <input #studentJMBAG />
+            </div>
+        </label>
+    </div>
+</div>
+<div>
+    <label>Broj ECTS bodova:
+        <div>
+            <input type="number" #studentNumberOfECTS/>
+        </div>
+    </label>
+    <label>Skolarina:
+        <div>
+            <input type="checkbox" #tuitionShouldBePaid/>
+        </div>
+    </label>
+
+    <button (click)="add(studentFirstName.value,studentLastName.value,studentJMBAG.value,studentNumberOfECTS.value,tuitionShouldBePaid.value); studentFirstName.value=''; studentLastName.value=''; studentJMBAG.value=''; studentNumberOfECTS.value=''; tuitionShouldBePaid.value=''">
+        Unesi Studenta
+
+    </button>
+
+</div>
+
+ 
